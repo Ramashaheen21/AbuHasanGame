@@ -18,13 +18,14 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
     public bool running => Mathf.Abs(velocity.x) > 0.25f || Mathf.Abs(inputAxis) > 0.25f;
-    public bool falling => velocity.y < 0f && !grounded;
+    //public bool falling => velocity.y < 0f && !grounded;
 
     private void Awake()
     {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
         capsuleCollider = GetComponent<Collider2D>();
+        velocity = Vector2.zero;
     }
 
     private void OnEnable()
@@ -76,16 +77,11 @@ public class PlayerMovement : MonoBehaviour
         inputAxis = Input.GetAxis("Horizontal");
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
 
-        // Check if running into a wall
-        if (rb.Raycast(Vector2.right * velocity.x)) {
-            velocity.x = 0f;
-        }
-
-        // Flip sprite to face direction
+        // Flip sprite based on movement direction
         if (velocity.x > 0f) {
-            transform.eulerAngles = Vector3.zero;
+            transform.eulerAngles = Vector3.zero;  // facing right
         } else if (velocity.x < 0f) {
-            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);  // facing left
         }
     }
 
@@ -116,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
             // Bounce off enemy head
             if (transform.DotTest(collision.transform, Vector2.down))
@@ -127,11 +123,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.layer != LayerMask.NameToLayer("PowerUp"))
         {
-            // Stop vertical movement if ABu Hasan bonks his head
+            // Stop vertical movement if mario bonks his head
             if (transform.DotTest(collision.transform, Vector2.up)) {
                 velocity.y = 0f;
             }
         }
     }
+
+
 
 }

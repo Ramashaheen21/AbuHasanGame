@@ -2,42 +2,42 @@ using UnityEngine;
 
 public class Soldier : MonoBehaviour
 {
-    public Sprite flatSprite;
+     public Sprite flatSprite;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-        if(coll.gameObject.CompareTag("AbuHasan"))
+        if (collision.gameObject.CompareTag("AbuHasan") )
         {
-            if(coll.transform.DotTest(transform , Vector2.down))
-            {
+            Abuhasan abuhasan = collision.gameObject.GetComponent<Abuhasan>();
 
+            if (collision.transform.DotTest(transform, Vector2.down)) {
+                Flatten();
+            }
+            else {
+                abuhasan.Hit();
             }
         }
     }
 
-    private void Flatten()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Shell")) {
+            Hit();
+        }
+    }
+
+     private void Flatten()
     {
         GetComponent<Collider2D>().enabled = false;
-        GetComponent<EntityMovement>().enabled = false;
+        GetComponent<EnemyMovement>().enabled = false;
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = flatSprite;
         Destroy(gameObject, 0.5f);
+    }
 
-    }    
 
-     private void Hit()
+    private void Hit()
     {
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;

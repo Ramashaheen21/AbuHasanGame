@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1746018115841079521}
   - component: {fileID: 769690771484291029}
+  - component: {fileID: 4423349052220748072}
+  - component: {fileID: 6392014850047925199}
   m_Layer: 3
   m_Name: small_AbuHasan
   m_TagString: Untagged
@@ -84,6 +86,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4423349052220748072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725304898651454928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a805ff59b19371d419c485e3602ddb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: 12e471a4d104a364b9d8a3c486fe18b3, type: 3}
+  jump: {fileID: 21300000, guid: f1be4df859823c04daa0dde428fb30af, type: 3}
+  run: {fileID: 0}
+--- !u!114 &6392014850047925199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725304898651454928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d7455e980cf214c83e8a9b8bea1974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 9d51439aedbcdfb47af70ff72e6a4e1f, type: 3}
+  - {fileID: 21300000, guid: 67097f41722d9ca4ea96743c758bac19, type: 3}
+  - {fileID: 21300000, guid: be5af164427b27b47827306f759f167c, type: 3}
+  framerate: 0.25
 --- !u!1 &5840884000852211897
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +130,7 @@ GameObject:
   - component: {fileID: 2924408926638471415}
   - component: {fileID: 46617468226039545}
   - component: {fileID: 8750269107090066871}
+  - component: {fileID: 3213019705255157133}
   m_Layer: 3
   m_Name: AbuHasan
   m_TagString: AbuHasan
@@ -197,6 +232,20 @@ MonoBehaviour:
   moveSpeed: 8
   maxJumpHeight: 5
   maxJumpTime: 1
+--- !u!114 &3213019705255157133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840884000852211897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66194b183516c94f95df89d00687963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallRenderer: {fileID: 4423349052220748072}
+  bigRenderer: {fileID: 7183185820091073588}
 --- !u!1 &9015503419769348714
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +256,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8039406952890561831}
   - component: {fileID: 9101951888548541462}
+  - component: {fileID: 7183185820091073588}
+  - component: {fileID: 2278852967504388229}
   m_Layer: 3
   m_Name: Big_AbuHasan
   m_TagString: Untagged
@@ -223,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 9015503419769348714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.83, y: 0.88, z: -0.05350318}
+  m_LocalPosition: {x: 0.96, y: 0.92, z: -0.05350318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,3 +332,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7183185820091073588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9015503419769348714}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a805ff59b19371d419c485e3602ddb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: fd5c1c5f41cb202489ed4384d027cb16, type: 3}
+  jump: {fileID: 21300000, guid: 8015dd4b53ead454b9823bf734b6d3b5, type: 3}
+  run: {fileID: 0}
+--- !u!114 &2278852967504388229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9015503419769348714}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d7455e980cf214c83e8a9b8bea1974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 251fd6b2e5ecfd2489f5ec8999dc1f64, type: 3}
+  - {fileID: 21300000, guid: 224b7842ad71bff41a351ec3d9489529, type: 3}
+  - {fileID: 21300000, guid: cb3062486b9385e438bd45e8ec40000d, type: 3}
+  framerate: 0.25

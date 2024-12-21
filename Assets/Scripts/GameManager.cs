@@ -1,74 +1,100 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// this class will reset the game if abuhasan dies at some point in the game
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instances { get; private set; }
+    public static GameManager Instance { get; private set; } // Singleton Instance
 
-    public int world{get; private set;}
-    public int stage{get; private set;}
-    public int lives{get; private set;}
+    public int world { get; private set; }
+    public int stage { get; private set; }
+    public int lives { get; private set; }
+    public int coins { get; private set; }
 
     private void Awake()
     {
-        if( Instances != null)
+        if (Instance != null)
         {
             DestroyImmediate(gameObject);
         }
-        else {
-            Instances = this; 
-            DontDestroyOnLoad(gameObject); // dont destrot this game object whenever we go to different levels
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Prevent destruction when switching scenes
         }
     }
 
-    private void onDestroy(){
-        if(Instances == this){
-            Instances = null;
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
         }
     }
 
-    void Start()
+    private void Start()
     {
         NewGame();
     }
+
     private void NewGame()
     {
-        lives =3; 
-        LoadLevel(1,1);
-    }
-    private void LoadLevel(int w , int s)
-    {
-        w = world;
-        s = stage;   
+        lives = 3;
+        coins = 0;
 
-        // make sure that all the scenes are called approprietly
-        SceneManager.LoadScene($"{world} - {stage}"); 
+        LoadLevel(1, 1);
+    }
+
+    private void LoadLevel(int w, int s)
+    {
+        world = w;
+        stage = s;
+
+        // Ensure all scenes are named appropriately
+        SceneManager.LoadScene($"{world} - {stage}");
     }
 
     public void ResetLevel(float delay)
     {
-        Invoke(nameof(ResetLevel) , delay);
+        Invoke(nameof(ResetLevel), delay);
     }
 
     public void ResetLives()
     {
         lives--;
 
-        if(lives>0){
-            LoadLevel(world,stage);
+        if (lives > 0)
+        {
+            LoadLevel(world, stage);
         }
-        else {
+        else
+        {
             GameOver();
         }
     }
 
-    private void GameOver(){
+    private void GameOver()
+    {
         NewGame();
     }
 
     public void NextLevel()
     {
-        LoadLevel(world,stage + 1);
+        LoadLevel(world, stage + 1);
+    }
+
+    public void AddCoin()
+    {
+        coins++;
+
+        if (coins == 100)
+        {
+            AddLife();
+            coins = 0;
+        }
+    }
+
+    public void AddLife()
+    {
+        lives++;
     }
 }
