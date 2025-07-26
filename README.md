@@ -42,8 +42,8 @@ This was a **team of two**, collaboratively developing the full game over two mo
 ---
 
 ### 📽️ Gameplay Demo
-Watch the full gameplay demo here:  
-**[🎥 Abu Hassan Game Demo](<>)**
+
+[▶️ Click to Watch Demo](https://streamable.com/rqxui0)
 
 ---
 
@@ -51,7 +51,7 @@ Watch the full gameplay demo here:
 
 | City-Level 1 Design | City-Level 2 Design | City-Level 3 Design |
 |-------------------|--------------------|----------------------------|
-| ![Level 1](screenshots/level1.jpeg) | ![Level 2](/screenshots/level2.jpeg) | ![Level 2](/screenshots/level3.jpeg) |
+| ![Level 1](Images/level1.jpeg) | ![Level 2](/Images/level2.jpeg) | ![Level 2](/Images/level3.jpeg) |
 
 ---
 
