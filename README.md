@@ -19,9 +19,9 @@ The game consists of **three levels**, each representing a different **Palestini
 
 ---
 
-### 👨‍💻 Development Team
+### 👩‍💻 Development Team
 - 👩‍💻 **Hind Sumary** – Pixel artist, visual designer.  
-- 👨‍💻 **Partner - @rama-shaheen** – Logic implementation as a C# developer and Unity integration support  
+- 👩‍💻 **Partner - @rama-shaheen** – Logic implementation as a C# developer and Unity integration support  
 This was a **team of two**, collaboratively developing the full game over two months.
 
 ---
