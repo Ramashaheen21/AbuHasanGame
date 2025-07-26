@@ -36,7 +36,7 @@ This was a **team of two**, collaboratively developing the full game over two mo
 ### 🛠️ Technologies Used
 - **Unity Game Engine**
 - **C#** (C Sharp) for scripting logic and behavior
-- **Aseprite / Piskel / or similar tools** for pixel art (if applicable)
+- **Aseprite / Piskel** for pixel art
 - Unity’s **Tilemap system**, **2D physics**, **collision layers**, and **animation controllers**
 
 ---
