@@ -20,15 +20,15 @@ The game consists of **three levels**, each representing a different **Palestini
 ---
 
 ### 👨‍💻 Development Team
-- 👩‍💻 **Hind Sumary** – Pixel artist, visual designer, and C# developer  
-- 👨‍💻 **Partner** – Logic implementation and Unity integration support  
+- 👩‍💻 **Hind Sumary** – Pixel artist, visual designer.  
+- 👨‍💻 **Partner - @rama-shaheen** – Logic implementation as a C# developer and Unity integration support  
 This was a **team of two**, collaboratively developing the full game over two months.
 
 ---
 
 ### 📅 Development Timeline
-- **Start Date:** October 2023  
-- **Completion Date:** December 2023  
+- **Start Date:** December 2023  
+- **Completion Date:** January 2024  
 - Duration: ~8 weeks (from prototyping to final polishing)
 
 ---
