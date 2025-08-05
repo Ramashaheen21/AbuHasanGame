@@ -1,7 +1,7 @@
 # 🌾 Abu Hassan – A Pixel-Art Palestinian Platformer Game
 
 ### 🎮 About the Game
-**Abu Hassan** is a pixel-art 2D platformer game developed in Unity as part of the **Intro to Game Development** course in the **first semester of the third year** (2023). The game tells the fictional story of **Abu Hassan**, a modern Palestinian farmer, who journeys through multiple levels representing real Palestinian cities while facing symbolic challenges — most notably in the form of occupation soldiers.
+**Abu Hassan** is a pixel-art 2D platformer game developed in Unity as part of the **Intro to Game Development** course in the **first semester of the  senior year**. The game tells the fictional story of **Abu Hassan**, a modern Palestinian farmer, who journeys through multiple levels representing real Palestinian cities while facing symbolic challenges — most notably in the form of occupation soldiers.
 
 The game consists of **three levels**, each representing a different **Palestinian city**, and includes **screens between levels** that highlight **fun facts** about each city.
 
